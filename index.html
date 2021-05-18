@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <style>
+    .disable-selection {
+        -moz-user-select: none;
+        /* Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer */
+        -khtml-user-select: none;
+        /* KHTML browsers (e.g. Konqueror) */
+        -webkit-user-select: none;
+        /* Chrome, Safari, and Opera */
+        -webkit-touch-callout: none;
+        /* Disable Android and iOS callouts*/
+    }
+    </style>
+</head>
+
+<body> 
+    <button id="button1" onclick="onDeviceInfoButtonClick()" style="display: none">Device Info</button>
+    <table style="border: 0px; width: 100%">
+        <tr>
+            <td>
+                <table style="border: 0px;">
+                    <tr>
+                        <td>
+                            <button class="disable-selection" id="buttonConnect" onclick="onConnectButtonClick()" style="height: 70px; width: 100px">Connect</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="disable-selection" id="buttonDisconnect" onclick="disconnect()" disabled style="height: 70px; width: 100px">Disconnect</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="disable-selection" id="buttonLightsOn" onclick="buttonLightsOn()" disabled style="height: 70px; width: 100px">Lights On</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="disable-selection" id="buttonLightsOff" onclick="buttonLightsOff()" disabled style="height: 70px; width: 100px">Lights Off</button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table style="border: 0px;">
+                    <tr>
+                        <td></td>                        
+                        <td style="text-align: center">
+                            <label id="currentSpeed">0</label>
+                        </td>
+                        <td></td>                        
+                    </tr>                    
+                    <tr>
+                        <td>
+                            <button class="disable-selection" id="buttonLeft" ontouchstart="buttonLeft()" ontouchend="buttonLeftUp()" disabled style="height: 70px; width: 200px">
+                                <== Left</button>
+                        </td>
+                        <td style="text-align: center">
+                            <button class="disable-selection" id="buttonDrive" ontouchstart="buttonForward()" ontouchend="buttonStopDrive()" disabled style="height: 70px; width: 200px">Drive</button>
+                        </td>                        
+                        <td>
+                            <button class="disable-selection" id="buttonRight" ontouchstart="buttonRight()" ontouchend="buttonRightUp()" disabled style="height: 70px; width: 200px">Right ==></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style="text-align: center">
+                            <button class="disable-selection" id="buttonStop" onclick="buttonStop()" disabled style="height: 70px; width: 200px">Stop</button>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="disable-selection" id="buttonLeftReverse" ontouchstart="buttonLeftReverse()" ontouchend="buttonLeftReverseUp()" disabled style="height: 70px; width: 200px">
+                                <== Left</button>
+                        </td>
+                        <td style="text-align: center">
+                            <button class="disable-selection" id="buttonReverse" ontouchstart="buttonReverseDown()" ontouchend="buttonStopReverse()" disabled style="height: 70px; width: 200px">Reverse</button>
+                        </td>
+                        <td>
+                            <button class="disable-selection" id="buttonRightReverse" ontouchstart="buttonRightReverse()" ontouchend="buttonRightReverseUp()" disabled style="height: 70px; width: 200px">Right ==></button>
+                        </td>
+                    </tr>                    
+                </table>
+            </td>
+        </tr>
+    </table>    
+</body>
+<script src="app.js"></script>
+
+</html>
