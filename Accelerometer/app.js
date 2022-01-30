@@ -20,9 +20,9 @@ RotateElement = (element, degree) => {
 }
 
 window.addEventListener('deviceorientation', function (result) {
-    App.Roll = ((result.beta === null) ? 0 : result.beta);
-    App.Pitch = ((result.gamma === null) ? 0 : result.gamma);
-    App.Yaw = ((result.alpha === null) ? 0 : result.alpha);
+    App.Roll = parseFloat(((result.beta === null) ? 0 : result.beta).toFixed(2));
+    App.Pitch = parseFloat(((result.gamma === null) ? 0 : result.gamma).toFixed(2));
+    App.Yaw = parseFloat(((result.alpha === null) ? 0 : result.alpha).toFixed(2));
 
     $("#roll").html(App.Roll);
     $("#pitch").html(App.Pitch);
